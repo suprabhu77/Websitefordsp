@@ -26,11 +26,10 @@ function getcutoff(){
     }
     
 }
-function cutofffreqfornodecibles(Gain,freq,_filteOrderN) {
+function cutofffreqfornodecibles(Gain, freq, _filteOrderN) {
     numerator = freq;
-    denominator = Math.pow((Math.pow(1,Gain*2)-1),1/(2*_filteOrderN));
-    return Math.ceil(numerator/denominator);
-
+    denominator = Math.pow((1/Math.pow(Gain, 2) - 1), 1 / (2 * _filteOrderN));
+    return (numerator / denominator);
 }
 
 function cutofffreqfordecibles(Gain,freq,_filteOrderN) {
