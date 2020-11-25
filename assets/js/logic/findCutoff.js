@@ -38,3 +38,27 @@ function cutofffreqfordecibles(Gain,freq,_filteOrderN) {
     return Math.ceil(numerator/denominator);
 }
 
+function sendmail(){
+var sendmaildata = Array.from(document.querySelectorAll("#reachoutmail input")).reduce((acc, input) => ({ ...acc, [input.id]: input.value}), {});
+sendEmail(sendmaildata.name, sendmaildata.email,sendmaildata.message);
+console.log(sendmaildata);
+// var name = document.querySelector("#name").value;
+// var email = document.querySelector("#email").value;
+// var message = document.querySelector("#message").value;
+// sendEmail(name,email,message)
+
+}
+function sendEmail(name,email,message){
+    console.log($(message))
+    Email.send({
+        Host : "smtp.gmail.com",
+        Username : "prabhusumantha77@gmail.com",
+        Password : "addurapppaswword",
+        To : 'prabhusumantha77@gmail.com',
+        From : "prabhusumantha77@gmail.com",
+        Subject : `${name} from his mail id ${email} send you a mail`,
+        Body : `${message}`
+    }).then(
+      message => alert(message)
+    );
+}
