@@ -38,10 +38,10 @@ function cutofffreqfordecibles(Gain,freq,_filteOrderN) {
     return Math.ceil(numerator/denominator);
 }
 
-function sendmail(){
+function grabDataForMail(){
 var sendmaildata = Array.from(document.querySelectorAll("#reachoutmail input")).reduce((acc, input) => ({ ...acc, [input.id]: input.value}), {});
-sendEmail(sendmaildata.name, sendmaildata.email,sendmaildata.message);
-console.log(sendmaildata);
+sendEmail(sendmaildata.name, sendmaildata.email, sendmaildata.message);
+// console.log(sendmaildata);
 // var name = document.querySelector("#name").value;
 // var email = document.querySelector("#email").value;
 // var message = document.querySelector("#message").value;
@@ -53,8 +53,8 @@ function sendEmail(name,email,message){
     Email.send({
         Host : "smtp.gmail.com",
         Username : "prabhusumantha77@gmail.com",
-        Password : "addurapppaswword",
-        To : 'prabhusumantha77@gmail.com',
+        Password : "ijbmdgfhdokczrcr",
+        To : 'fazal.farhan@gmail.com',
         From : "prabhusumantha77@gmail.com",
         Subject : `${name} from his mail id ${email} send you a mail`,
         Body : `${message}`
