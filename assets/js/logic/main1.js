@@ -53,7 +53,7 @@ function getOrder() {
 
 function cutofffreqfornodecibles(Gain, freq, _filteOrderN) {
     numerator = freq;
-    denominator = Math.pow((1/Math.pow(Gain, 2) - 1), 1 / (2 * _filteOrderN));
+    denominator = Math.pow((1 / Math.pow(Gain, 2) - 1), 1 / (2 * _filteOrderN));
     return (numerator / denominator);
 }
 
@@ -73,4 +73,68 @@ function orderFromDecibles(minPassBandGain, maxStopBandGain, passBandFreq, stopB
     var numerator = Math.log10((Math.pow(10, 0.1 * maxStopBandGain) - 1) / (Math.pow(10, 0.1 * minPassBandGain) - 1));
     var denominator = 2 * Math.log10(stopBandFreq / passBandFreq);
     return Math.ceil(numerator / denominator);
+}
+var count = 0;
+function CheckNUmber() {
+    
+    if(count == 0){
+        SecretNumber = Math.floor(Math.random() * 10);
+        console.log(SecretNumber);
+    }
+
+    // console.log(usernumber)
+    // console.log(count);
+    usernumber = document.querySelector("#getNumber").value;
+    console.log(usernumber);
+    if(count>=6) {
+        resultContainer = document.getElementById("SecreteNumberdisplayresult");
+        resultContainer.style.display = "block";
+        resultContainer.innerText = `Nope. The number I was thinking of was ${SecretNumber})`
+    }
+    else if (SecretNumber > usernumber) {
+        console.log("Triggered greater")
+        resultContainer = document.getElementById("SecreteNumberdisplayresult");
+        resultContainer.style.display = "block";
+        resultContainer.innerText = "Your guess is too High. Enter diffrent Number";
+    }
+    else if (SecretNumber < usernumber) {
+        console.log("Triggered lesser")
+        resultContainer = document.getElementById("SecreteNumberdisplayresult");
+        resultContainer.style.display = "block";
+        resultContainer.innerText = "Your guess is too Low. Enter Diffrent Number";
+    }
+    else if (SecretNumber == usernumber) {
+        resultContainer = document.getElementById("SecreteNumberdisplayresult");
+        resultContainer.style.display = "block";
+        resultContainer.innerText = `Good job! You guessed my number in ${count} guesses!`
+    }
+    count = count + 1;
+    console.log(count);
+    console.log(SecretNumber);
+}
+
+
+function grabDataForMail() {
+    var sendmaildata = Array.from(document.querySelectorAll("#reachoutmail input")).reduce((acc, input) => ({ ...acc, [input.id]: input.value }), {});
+    sendEmail(sendmaildata.name, sendmaildata.email, sendmaildata.message);
+    // console.log(sendmaildata);
+    // var name = document.querySelector("#name").value;
+    // var email = document.querySelector("#email").value;
+    // var message = document.querySelector("#message").value;
+    // sendEmail(name,email,message)
+
+}
+function sendEmail(name, email, message) {
+    console.log($(message))
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "prabhusumantha77@gmail.com",
+        Password: "ijbmdgfhdokczrcr",
+        To: 'fazal.farhan@gmail.com',
+        From: "prabhusumantha77@gmail.com",
+        Subject: `${name} from his mail id ${email} send you a mail`,
+        Body: `${message}`
+    }).then(
+        message => alert(message)
+    );
 }

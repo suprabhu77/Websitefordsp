@@ -25,9 +25,12 @@
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
 							<li><a href="#filterOrder">Filter order</a></li>
-							<li><a href="#Filtercuoff">Cutoff frequency</a></li>
-							<li><a href="#three">Poles</a></li>
+							<li><a href="#three">Do Relief By Playing Game</a></li>
+							<!-- <li><a href="#Filtercuoff">Cutoff frequency</a></li>
+							<li><a href="#three">Poles</a></li> -->
+							
 						</ul>
+						
 					</nav>
 				</div>
 			</section>
@@ -121,73 +124,40 @@
 						</section>
 					</section>
 
-					<!-- <section id="Filtercuoff" class="wrapper style2 spotlights">
-						<section> -->
+					<section id="filterOrder" class="wrapper style2 spotlights">
+						<section>
 							<!-- <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a> -->
-							<!-- <div class="content">
+							<div class="content">
 								<div class="inner">
 									<section>
-										<h2>CUT OFF FREQUENCY OF FILTER</h2>
-										<form id="findfiltercutofffrq">
-											<div class="row gtr-uniform">
-												<div class="col-12 col-12-xsmall">
-													<select name="gainType" id="gainType">
-														<option value="">Select Gain Type</option>
-														<option value="direct">Normal</option>
-														<option value="decibles">Decibles</option>
-													</select>
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="minPassBandGain" id="minPassBandGain"
-														placeholder="Minimum Pass Band Gain">
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="maxStopBandGain" id="maxStopBandGain"
-														placeholder="Maximum Stop Band Gain">
-												</div>
-												<div class="col-12">
-													<select name="frequencyType" id="frequencyType">
-														<option value="">Select Frequency Type</option>
-														<option value="hz">Hz</option>
-														<option value="rads">Rad/s</option>
-													</select>
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="passBandFrequency" id="passBandFrequency"
-														placeholder="Enter Pass Band Frequency - Ωp">
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="stopBandFrequency" id="stopBandFrequency"
-														placeholder="Enter Stop Band Frequency - Ωs">
-												</div>
-
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="filteOrderN" id="filteOrderN"
-														placeholder="Order of filter">
-												</div>
-			
-												<div class="col-12">
-													<ul class="actions">
-														<li><a onclick="getcutoff()" class="button icon solid fa-search">Find
-																Cutoff Freq</a></li>
-														<li><input type="reset" value="Reset"></li>
-													</ul>
-												</div>
-			
-												<div class="col-12">
+										<h2>GUESS THE NUMBER</h2>
+										<h4>You have Only 6 chances, Lets break it</h4>
+										<form id="findOrderFrom">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="getNumber" id="getNumber"
+													placeholder="Enter the Number">
+											</div>
+											<br>
+											<ul class="actions">
+												<li><a onclick = "CheckNUmber()" class="button icon solid fa-search">CheckNumber</a></li>
+											</ul>
+											<!-- <br> -->
+											<div class="col-12">
 													<blockquote>
-													<h3  id="resultOrder1">
+													<h3 id="SecreteNumberdisplayresult">
 													</h3>
 													</blockquote>
-												</div>
 											</div>
 										</form>
 									</section>
 			
 								</div>
 							</div>
-						</section> -->
-					<!-- Three -->
+						</section>
+					</section>
+
+					
+					
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
