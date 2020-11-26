@@ -1,5 +1,5 @@
 
-function getcutoff(){
+function getCutoff(){
     var variablesFromForm = Array.from(document.querySelectorAll("#findfiltercutofffrq input")).reduce((acc, input) => ({ ...acc, [input.id]: input.value }), {});
     console.log(variablesFromForm)
 

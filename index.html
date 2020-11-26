@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://smtpjs.com/v3/smtp.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="assets\js\logic\findCutoff.js"></script>
+		<!-- <script src="assets\js\logic\findCutoff.js"></script> -->
 		<script src="assets\js\logic\main1.js"></script>
 		<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 	</head>
@@ -91,11 +91,11 @@
 													<input type="text" name="filteOrderN" id="filteOrderN"
 														placeholder="Order of filter">
 												</div> -->
-			
 												<div class="col-12">
 													<ul class="actions">
-														<li><a onclick="getOrder()" class="button icon solid fa-search">Find
-																Cutoff Freq</a></li>
+														<li><a onclick="getOrder()" class="button icon solid fa-search">Find order
+																</a></li>
+														<li><a onclick = "getCutoff()" class="button icon solid fa-search" >Cutoff frequency</a></li>
 														<li><input type="reset" value="Reset"></li>
 													</ul>
 												</div>
@@ -106,6 +106,12 @@
 													</h3>
 													</blockquote>
 												</div>
+												<!-- <div class="col-12">
+													<blockquote>
+													<h3  id="resultOrder1">
+													</h3>
+													</blockquote>
+												</div> -->
 											</div>
 										</form>
 									</section>
@@ -115,10 +121,10 @@
 						</section>
 					</section>
 
-					<section id="Filtercuoff" class="wrapper style2 spotlights">
-						<section>
+					<!-- <section id="Filtercuoff" class="wrapper style2 spotlights">
+						<section> -->
 							<!-- <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a> -->
-							<div class="content">
+							<!-- <div class="content">
 								<div class="inner">
 									<section>
 										<h2>CUT OFF FREQUENCY OF FILTER</h2>
@@ -180,7 +186,7 @@
 			
 								</div>
 							</div>
-						</section>
+						</section> -->
 					<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
