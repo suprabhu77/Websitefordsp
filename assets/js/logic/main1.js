@@ -78,12 +78,9 @@ var count = 0;
 function CheckNUmber() {
     
     if(count == 0){
-        SecretNumber = Math.floor(Math.random() * 10);
+        SecretNumber = Math.floor(Math.random() * Math.floor(20));
         console.log(SecretNumber);
     }
-
-    // console.log(usernumber)
-    // console.log(count);
     usernumber = document.querySelector("#getNumber").value;
     console.log(usernumber);
     if(count>=6) {
@@ -91,13 +88,13 @@ function CheckNUmber() {
         resultContainer.style.display = "block";
         resultContainer.innerText = `Nope. The number I was thinking of was ${SecretNumber})`
     }
-    else if (SecretNumber > usernumber) {
+    else if ( usernumber >SecretNumber ) {
         console.log("Triggered greater")
         resultContainer = document.getElementById("SecreteNumberdisplayresult");
         resultContainer.style.display = "block";
         resultContainer.innerText = "Your guess is too High. Enter diffrent Number";
     }
-    else if (SecretNumber < usernumber) {
+    else if (usernumber<SecretNumber) {
         console.log("Triggered lesser")
         resultContainer = document.getElementById("SecreteNumberdisplayresult");
         resultContainer.style.display = "block";
